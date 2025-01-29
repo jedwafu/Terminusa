@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  game-core:
+    image: terminusa:1.0
+    environment:
+      - KOII_NODE=https://node.koii.network
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+
+  koii-node:
+    image: koii/node:latest
+    environment:
+      - NETWORK=mainnet
+    volumes:
+      - ./koii-data:/var/lib/koii
