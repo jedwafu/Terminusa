@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ player.username }}!</h1>
+    <p>TAC Balance: {{ player.tac_balance }}</p>
+    <p>Health: {{ player.health }}</p>
+    <a href="{{ url_for('explore') }}">Explore</a> |
+    <a href="{{ url_for('marketplace') }}">Marketplace</a> |
+    <a href="{{ url_for('achievements') }}">Achievements</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

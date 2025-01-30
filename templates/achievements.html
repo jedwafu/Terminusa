@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Terminusa Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Achievements</h1>
+        {% if achievements %}
+            <table>
+                <tr>
+                    <th>Achievement</th>
+                    <th>Description</th>
+                    <th>Unlocked At</th>
+                </tr>
+                {% for achievement in achievements %}
+                <tr>
+                    <td>{{ achievement.name }}</td>
+                    <td>{{ achievement.description }}</td>
+                    <td>{{ achievement.unlocked_at }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No achievements unlocked yet. Keep playing!</p>
+        {% endif %}
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>
