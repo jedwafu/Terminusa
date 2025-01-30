@@ -1,0 +1,4 @@
+# Update requirements.txt
+cryptography==39.0.2
+openzeppelin-solidity==4.8.2
+koii-security-sdk>=1.4.0
