@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Marketplace</h1>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Seller</th>
+            <th>Action</th>
+        </tr>
+        {% for listing in listings %}
+        <tr>
+            <td>{{ listing.item_name }}</td>
+            <td>{{ listing.quantity }}</td>
+            <td>{{ listing.price }} TAC</td>
+            <td>{{ Player.query.get(listing.seller_id).username }}</td>
+            <td><button>Buy</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
